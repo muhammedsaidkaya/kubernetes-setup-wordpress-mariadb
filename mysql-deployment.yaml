@@ -38,3 +38,6 @@ spec:
             secretKeyRef:
               name: mysql-user-secret
               key: mysql-root-password
+
+
+# kubectl label nodes minikube type=db
