@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: wp-ingress
+  namespace: default
+spec:
+  rules:
+  - host: k8s.example.com
+    http:
+      paths:
+      - backend:
+          serviceName: wp-svc
+          servicePort: 8888
+---

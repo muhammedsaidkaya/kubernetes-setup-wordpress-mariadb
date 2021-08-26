@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-deployment
+  labels:
+    app: wp-app
+    type: db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wp-app
+      type: db
+  template:
+    metadata:
+      name: mysql-pod
+      labels:
+        app: wp-app
+        type: db
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: type
+                operator: In
+                values:
+                - db
+      containers:
+      - name: mysql-container
+        image: mariadb
+        ports:
+        - containerPort: 2021
+        env:
+        - name: MARIADB_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-user-secret
+              key: mysql-root-password

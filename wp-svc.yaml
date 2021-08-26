@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: wp-svc
+  labels:
+    app: wp-app
+    type: client
+spec:
+  type: ClusterIP
+  selector:
+    app: wp-app
+    type: client
+  ports:
+  - protocol: TCP
+    port: 8888
+    targetPort: 3000
