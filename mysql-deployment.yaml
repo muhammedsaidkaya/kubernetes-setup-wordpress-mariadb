@@ -31,13 +31,17 @@ spec:
       - name: mysql-container
         image: mariadb
         ports:
-        - containerPort: 2021
+        - containerPort: 3306
         env:
         - name: MARIADB_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
               name: mysql-user-secret
-              key: mysql-root-password
+              key: mysql-password
+        - name: MARIADB_DATABASE
+          valueFrom:
+            configMapKeyRef:
+              name: mysql-host-config
+              key: database-name
 
 
-# kubectl label nodes minikube type=db
