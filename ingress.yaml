@@ -12,3 +12,5 @@ spec:
           serviceName: wp-svc
           servicePort: 8888
 ---
+
+

@@ -5,6 +5,6 @@ metadata:
   labels:
     app: wp-app
 data:
-  database-url: mysql-svc:2201
+  database-url: mysql-svc:2021
   database-name: k8s
   table-prefix: wp_

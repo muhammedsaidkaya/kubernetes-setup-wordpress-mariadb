@@ -45,3 +45,6 @@ spec:
               key: database-name
 
 
+# mariadb port değişecek
+# wp pod içinde serverName değişecek.
+
