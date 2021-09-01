@@ -2,7 +2,7 @@
 
 ```
 docker build -f mariadb-Dockerfile . -t custom-mariadb
-docker build -f mariadb-Dockerfile . -t custom-wordpress
+docker build -f wp-Dockerfile . -t custom-wordpress
 ```
 
 ```
