@@ -1,8 +1,9 @@
 # wp-mariadb-k8s-setup
 
+```
 docker build -f mariadb-Dockerfile . -t custom-mariadb
 docker build -f mariadb-Dockerfile . -t custom-wordpress
-
+```
 
 ```
 kubectl apply -f mysql-user-secret.yaml
