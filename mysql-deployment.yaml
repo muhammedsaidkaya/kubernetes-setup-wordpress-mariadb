@@ -29,10 +29,9 @@ spec:
                 - db
       containers:
       - name: mysql-container
-        image: custom-mariadb:testing
-        imagePullPolicy: IfNotPresent
+        image: mariadb
         ports:
-        - containerPort: 2021
+        - containerPort: 3306
         env:
         - name: MARIADB_ROOT_PASSWORD
           valueFrom:

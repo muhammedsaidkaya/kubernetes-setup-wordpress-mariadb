@@ -1,8 +1,5 @@
 #!/bin/bash
 
-docker build -f mariadb-Dockerfile . -t custom-mariadb:testing
-docker build -f wp-Dockerfile . -t custome-wordpress:testing
-
 kubectl apply -f mysql-user-secret.yaml
 kubectl apply -f mysql-host-config.yaml
 
