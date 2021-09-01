@@ -1,19 +1,26 @@
 # wp-mariadb-k8s-setup
+
+docker build -f mariadb-Dockerfile . -t custom-mariadb
+docker build -f mariadb-Dockerfile . -t custom-wordpress
+
+
 ```
-kubectl apply -f mysql-user-secret.yaml && \
+kubectl apply -f mysql-user-secret.yaml
 kubectl apply -f mysql-host-config.yaml
 ```
 
 
 ```
 
-kubectl label nodes minikube type=db && \
-kubectl apply -f mysql-deployment.yaml && \
-kubectl apply -f mysql-svc.yaml && \
-kubectl apply -f wp-deployment.yaml && \
-kubectl apply -f wp-np-svc.yaml && \
-kubectl apply -f wp-svc.yaml && \
-kubectl appy -f ingress.yaml
+kubectl label nodes node01 type=db
+kubectl apply -f db-pv.yaml
+kubectl apply -f db-pvc.yaml
+kubectl apply -f mysql-deployment.yaml
+kubectl apply -f mysql-svc.yaml
+kubectl apply -f wp-deployment.yaml
+kubectl apply -f wp-np-svc.yaml
+kubectl apply -f wp-svc.yaml
+kubectl apply -f ingress.yaml
 ```
 
 ```

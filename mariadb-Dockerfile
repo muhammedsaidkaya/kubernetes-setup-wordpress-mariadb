@@ -1,0 +1,3 @@
+FROM mariadb
+
+EXPOSE 2021

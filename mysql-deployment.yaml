@@ -29,9 +29,10 @@ spec:
                 - db
       containers:
       - name: mysql-container
-        image: mariadb
+        image: custom-mariadb
+        imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 3306
+        - containerPort: 2021
         env:
         - name: MARIADB_ROOT_PASSWORD
           valueFrom:
@@ -43,8 +44,13 @@ spec:
             configMapKeyRef:
               name: mysql-host-config
               key: database-name
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: db-volume
+      volumes:
+        - name: db-volume
+          persistentVolumeClaim:
+            claimName: db-pvc
 
-
-# mariadb port değişecek
 # wp pod içinde serverName değişecek.
 

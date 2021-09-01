@@ -20,7 +20,8 @@ spec:
     spec:
       containers:
       - name: wp-container
-        image: wordpress
+        image: custom-wordpress
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
         env:
