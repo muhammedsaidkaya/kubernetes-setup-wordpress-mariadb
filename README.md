@@ -1,8 +1,8 @@
 # wp-mariadb-k8s-setup
 
 ```
-docker build -f mariadb-Dockerfile . -t custom-mariadb
-docker build -f wp-Dockerfile . -t custom-wordpress
+docker build -f mariadb-Dockerfile . -t custom-mariadb:testing
+docker build -f wp-Dockerfile . -t custome-wordpress:testing
 ```
 
 ```

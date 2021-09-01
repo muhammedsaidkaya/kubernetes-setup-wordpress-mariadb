@@ -29,7 +29,7 @@ spec:
                 - db
       containers:
       - name: mysql-container
-        image: custom-mariadb
+        image: custom-mariadb:testing
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 2021
