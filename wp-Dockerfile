@@ -1,3 +1,0 @@
-FROM wordpress
-
-# change apache config for just receiving requests from k8s.example.com
