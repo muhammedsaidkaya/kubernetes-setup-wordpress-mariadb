@@ -30,8 +30,10 @@ spec:
       containers:
       - name: mysql-container
         image: mariadb
+        args:
+        - --port=2021
         ports:
-        - containerPort: 3306
+        - containerPort: 2021
         env:
         - name: MARIADB_ROOT_PASSWORD
           valueFrom:
@@ -51,5 +53,5 @@ spec:
           persistentVolumeClaim:
             claimName: db-pvc
 
-# wp pod içinde serverName değişecek.
+# wp pod apache config içinde serverName değişecek.
 

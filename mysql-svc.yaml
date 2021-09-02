@@ -13,4 +13,4 @@ spec:
   ports:
   - protocol: TCP
     port: 2021
-    targetPort: 3306
+    targetPort: 2021
