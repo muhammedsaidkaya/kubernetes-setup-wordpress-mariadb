@@ -49,14 +49,3 @@ spec:
             secretKeyRef:
               name: mysql-user-secret
               key: mysql-password
-        volumeMounts:
-        - name: apache2-config-volume
-          mountPath: /etc/apache2/sites-enabled/k8s-config.conf
-          subPath: k8s-config.conf
-      volumes:
-      - name: apache2-config-volume
-        configMap:
-          name: wp-config
-          items:
-          - key: k8s-config.conf
-            path: k8s-config.conf

@@ -2,9 +2,8 @@
 
 kubectl apply -f mysql-user-secret.yaml
 kubectl apply -f mysql-host-config.yaml
-kubectl apply -f wp-config.yaml
 
-kubectl label nodes docker-desktop type=db
+kubectl label nodes minikube type=db
 kubectl apply -f db-pv.yaml
 kubectl apply -f db-pvc.yaml
 kubectl apply -f mysql-deployment.yaml

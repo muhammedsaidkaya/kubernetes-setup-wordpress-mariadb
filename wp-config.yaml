@@ -1,7 +1,0 @@
-apiVersion: v1
-data:
-  k8s-config.conf: |
-    ServerName = k8s.example.com
-kind: ConfigMap
-metadata:
-  name: wp-config
