@@ -51,8 +51,8 @@ spec:
               key: mysql-password
 
         volumeMounts:
-        - mountPath: /etc/apache2/sites-available/k8s.conf
-          subPath: k8s.conf
+        - mountPath: /etc/apache2/sites-available/000-default.conf
+          subPath: 000-default.conf
           name: wp-config-volume
       volumes:
       - name: wp-config-volume
@@ -60,5 +60,9 @@ spec:
           name: wp-config
           items:
           - key: k8s.conf
-            path: k8s.conf
+            path: 000-default.conf
+
+            #init container sed command
+            #dockerfile custom image
+            #configmap ile override etmek
 
